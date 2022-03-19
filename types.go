@@ -1,12 +1,21 @@
 package anonfiles
 
-import "regexp"
+import (
+	"net/http"
+	"regexp"
+	"time"
+)
 
 var reId = regexp.MustCompile(`(https?:\/\/)?(anonfiles.com\/)(([a-zA-Z0-9][0-f]){5})(\/.*|\W|$)`)
 
+var apiURL = "https://api.anonfiles.com/v2/file/%s/info"
+
+var client = &http.Client{Timeout: 10 * time.Second}
+
 type Info struct {
-	Status bool `json:"status"`
-	Data   Data `json:"data"`
+	Status bool  `json:"status"`
+	Data   Data  `json:"data"`
+	Error  Error `json:"error"`
 }
 type URL struct {
 	Full  string `json:"full"`
@@ -27,4 +36,9 @@ type File struct {
 }
 type Data struct {
 	File File `json:"file"`
+}
+type Error struct {
+	Message string `json:"message"`
+	Type    string `json:"type"`
+	Code    int    `json:"code"`
 }

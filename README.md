@@ -1,6 +1,6 @@
 # go-ipfs
 
-Anonfiles API wrapper written in Go.
+Anonfiles [API](https://anonfiles.com/docs/api) wrapper written in Go.
 
 ## Usage
 
@@ -38,12 +38,14 @@ Not ready yet.
 ## Roadmap
 
 - [x] Parse file id from the link. GetId()
-- [ ] Get information about the file. GetInfo()
-    - [ ] GetStatus()
-    - [ ] GetFullURL()
-    - [ ] GetShortURL()
-    - [ ] GetName()
-    - [ ] GetSizeBytes()
-    - [ ] GetSizeReadable()
+- [x] Get information about the file. GetInfo()
+    - [x] GetStatus()
+    - [x] GetFullURL()
+    - [x] GetShortURL()
+    - [x] GetName()
+    - [x] GetSizeBytes()
+    - [x] GetSizeReadable()
 - [ ] Upload file to the server. Upload()
 - [ ] Get temporary download link (from page HTML)
+- [ ] Add comments for the functions
+- [ ] Add documentation to go.dev
