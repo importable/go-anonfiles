@@ -1,4 +1,4 @@
-# go-ipfs
+# go-anonfiles
 
 Anonfiles [API](https://anonfiles.com/docs/api) wrapper written in Go.
 
